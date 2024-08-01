@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+
+span {
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.yellowShadow {
+    box-shadow: 3px 3px 0 0 #dbfa60;
+}
+
+.yellowShadow:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 0 #dbfa60;
+}
