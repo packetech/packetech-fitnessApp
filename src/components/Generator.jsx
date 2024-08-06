@@ -23,11 +23,10 @@ function Header(props) {
 
 
 
-export default function Generator() {
+export default function Generator(props) {
+  const {poison, setPoison, muscles, setMuscles, goal, setGoal, updateWorkout} = props
   const [showModal, setShowModal] = useState(false)
-  const [poison, setPoison] = useState('individual')
-  const [muscles, setMuscles] = useState([])
-  const [goal, setGoal] = useState('strength_power')
+  
   // let showModal = false
 
   function toggleModal () {
@@ -60,8 +59,8 @@ export default function Generator() {
 
 
   return (
-    <SectionWrapper header={"generate your workout"} title={['It\'s', 'Huge', 'o\' clock']}>
-        <Header index={'01'} title={'Pick your poison'} description={"Select the workout you wish to endure"} />
+    <SectionWrapper header={"generate your workout"} title={['It\'s a', 'Huge', 'time']}>
+        <Header index={'01'} title={'Pick your option'} description={"Select the workout you wish to endure"} />
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
@@ -79,7 +78,7 @@ export default function Generator() {
         <div className='bg-slate-950 border border-solid border-blue-950 duration-200 hover:border-blue-400 rounded-lg flex flex-col'>
           <button onClick={toggleModal} className='relative p-3 flex items-center justify-center'>
             <p className='capitalize'>{muscles.length == 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
-            <i class="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i> 
+            <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i> 
           </button>
           {showModal && (
             <div className='flex flex-col px-3 pb-3'>{(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
@@ -94,8 +93,8 @@ export default function Generator() {
             </div>
           )}
         </div>
-        <Header index={'03'} title={'Become Juggernaut'} description={"Select your ultimate objective"} />
-        <div className='grid grid-cols-3 gap-4'>
+        <Header index={'03'} title={'Become Large'} description={"Select your objective"} />
+        <div className='grid grid-cols-1  sm:grid-cols-3 gap-4'>
           {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
           return (
             <button onClick={() => {
@@ -106,7 +105,7 @@ export default function Generator() {
           )
         })}
         </div>
-        <Button text={"Formulate"}></Button>
+        <Button func={updateWorkout} text={"Formulate"}></Button>
     </SectionWrapper>
     
   )
