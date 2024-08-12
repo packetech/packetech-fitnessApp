@@ -3,6 +3,7 @@ import SectionWrapper from './SectionWrapper'
 import ExerciseCard from './ExerciseCard'
 
 
+
 export default function Workout(props) {
   const { workout } = props
   return (
@@ -14,7 +15,12 @@ export default function Workout(props) {
           )
         })}
       </div>
+      <div className='flex flex-col mx-auto'>
+        <p>Copyright © 2024 Hulknormous</p>
+      </div>
     </SectionWrapper>
-    
   )
 }
+//  <p>Copyright © 2024 Hulknormous</p>
+//<Button func={() => {window.location.href = '#generate'}} text={"StartOver"}></Button>
+// ndifrekeBuiltWorkout

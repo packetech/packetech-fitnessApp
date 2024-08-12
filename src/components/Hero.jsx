@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className='min-h-screen flex flex-col gap-10 items-center justify-center text-center max-w-[800px] w-full mx-auto p-4'>
       <div className='flex flex-col gap-4'>
-      <p>LET'S GET</p>
+      <p>...BECOME</p>
       <h1 className='uppercase font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>Hulk<span className='text-yellow-100'>normous</span>
       </h1>
       <div>

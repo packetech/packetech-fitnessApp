@@ -56,10 +56,8 @@ export default function ExerciseCard(props) {
                     <p className='font-medium'>{setsCompleted} / 5</p>
                 </button>
         </div>
-    </div>
+    </div>  
+    
   )
 }
 
-// info === 'reps' ? ({setsCompleted}*0) / 5 : {setsCompleted} / 5
-//{ {exercise.muscles.join(' & ')} ? {setsCompleted} / 5 : {setsCompleted}}
-//{setsCompleted} / 5
