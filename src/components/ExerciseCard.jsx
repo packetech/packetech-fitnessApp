@@ -1,13 +1,20 @@
 import React, {useState} from 'react'
+import { TEMPOS } from '../utils/swoldier'
+import { info } from 'autoprefixer'
+
 
 export default function ExerciseCard(props) {
     
     const {exercise, i} = props
-    const [setsCompleted, setSetsComplete] = useState(0)
 
-    function handleSetIncrement() {
+    const [setsCompleted, setSetsComplete] = useState(0)
+    
+
+   function handleSetIncrement() {
         setSetsComplete((setsCompleted + 1) % 6)
     }
+
+
 
 
 
@@ -38,10 +45,10 @@ export default function ExerciseCard(props) {
         {['reps', 'rest', 'tempo'].map(info => {
                     return (
                         <div key={info} className='flex flex-col p-2 rounded border-[1.5px] border-solid border-slate-900 w-full'>
-                            <h3 className='capitalize text-slate-400 text-sm'>{info === 'reps' ? `${exercise.unit}` : info}</h3>
-
+                            <h3 className='capitalize text-slate-400 text-sm'> {info === 'reps' ? `${exercise.unit}` : info}</h3>
                             <p className='font-medium'>{exercise[info]}</p>
                         </div>
+                        
                     )
                 })}
                 <button onClick={handleSetIncrement} className='flex flex-col p-2 rounded border-[1.5px] border border-blue-950 duration-200 hover:border-blue-400 w-full duration-200'>
@@ -52,3 +59,7 @@ export default function ExerciseCard(props) {
     </div>
   )
 }
+
+// info === 'reps' ? ({setsCompleted}*0) / 5 : {setsCompleted} / 5
+//{ {exercise.muscles.join(' & ')} ? {setsCompleted} / 5 : {setsCompleted}}
+//{setsCompleted} / 5

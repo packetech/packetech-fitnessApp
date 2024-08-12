@@ -5,6 +5,9 @@ import Button from './Button'
 
 
 
+
+
+
 function Header(props) {
   const { index, title, description } = props
   return (
@@ -17,10 +20,6 @@ function Header(props) {
       </div>
   )
 }
-
-
-
-
 
 
 export default function Generator(props) {
@@ -56,6 +55,7 @@ export default function Generator(props) {
     }
   
   }
+
 
 
   return (

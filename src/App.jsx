@@ -6,21 +6,30 @@ import { generateWorkout } from './utils/functions'
 
 
 
+
+
 function App() {
   const [workout, setWorkout] = useState([])
   const [poison, setPoison] = useState('individual')
   const [muscles, setMuscles] = useState([])
   const [goal, setGoal] = useState('strength_power')
+  
+  
+  
 
   function updateWorkout() {
+
     if (muscles.length < 1) {
       return
     }
     let newWorkout = generateWorkout({poison, muscles, goal})
     setWorkout(newWorkout)
-
-    window.location.href = '#workout'
+    
+    window.location.href = '#ndifrekeBuiltWorkout'
+    
   }
+
+
 
 
   return (
@@ -34,6 +43,7 @@ function App() {
         goal={goal}
         setGoal={setGoal}
         updateWorkout={updateWorkout}
+        
       />
       {workout && (<Workout workout={workout}/>)}
     </main>
