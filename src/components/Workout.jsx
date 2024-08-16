@@ -17,6 +17,7 @@ export default function Workout(props) {
       </div>
       <div className='flex flex-col mx-auto'>
         <p>Copyright © 2024 Hulknormous</p>
+        <p className='mx-auto'>#ndiBuilt</p>
       </div>
     </SectionWrapper>
   )
